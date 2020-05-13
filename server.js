@@ -4,9 +4,11 @@ var path = require("path");
 var methodOverride = require("method-override");
 var session = require("express-session");
 require("./utils/hbs");
+const dotenv=require('dotenv')
+dotenv.config();
 require("./db");
 Urls=require("./models/Urls")
-
+var PORT = process.env.PORT || 8000;
 // Routes of both API as well as normal
 var urlAPIRoutes = require("./routes/apiRoutes/urlApiRoutes");
 var userAPIRoutes = require("./routes/apiRoutes/userApiRoutes");
@@ -68,6 +70,6 @@ app.get("/:urlId",async(req,res)=>{
 }
 )
 
-app.listen(1234, function() {
-  console.log("Server started on port 1234"); 
+app.listen(PORT, function() {
+  console.log("Server started on port " `{$PORT}`); 
 });
