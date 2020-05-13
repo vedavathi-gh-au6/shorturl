@@ -1,15 +1,27 @@
+
 {{#if length}}
-<h1> Short URLs</h1>
-<ul>
-  
-  {{#each urls}}
-  <li><a href={{this.longurl}}>{{this.longurl}}</a>
-    <a href={{this.shorturl}}>{{this.shorturl}}</a>
-    <a href={{this.count}}>{{this.count}}</a>
-  </li>
-  {{/each}}
-  <a href='/urls/create'><button>Create a new Url</button></a>
-</ul>
+<h2>Hey {{name}}. Create a new url <a href='/urls/create'>here</a></h2>
+<h3> List of All ShortUrls</h3>
+
+<table border="4" >
+ <thead>
+   <tr>
+     <th>Full URL</th>
+     <th>Short URL</th>
+     <th>Count/No Of Clicks</th>
+   </tr>
+ </thead>
+ <tbody>
+    {{#each urls}}
+    <tr>
+     <td><a href={{this.longurl}}>{{this.longurl}}</a></td> 
+     <td><a href={{this.shorturl}}>{{this.shorturl}}</a></td>
+     <td><a href={{this.count}}>{{this.count}}</a></td>
+    </tr>
+     {{/each}}
+ </tbody>
+</table>
 {{else}}
 <h1>Hey {{name}}. Create a new url <a href='/urls/create'>here</a></h1>
 {{/if}}
+

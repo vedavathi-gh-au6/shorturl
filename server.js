@@ -69,5 +69,5 @@ app.get("/:urlId",async(req,res)=>{
 )
 
 app.listen(1234, function() {
-  console.log("Server started");
+  console.log("Server started on port 1234"); 
 });
